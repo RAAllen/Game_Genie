@@ -22,45 +22,48 @@ public class Game {
 	@Column(name="description")
 	private String description;
 	
+	@Column(name="release_year")
+	private int releaseYear;
+	
 	@Column(name="picture")
 	private String picture;
 	
 	@Column(name="video")
 	private String video;
 	
-	private String maker;
-	
-	private String system;
+	@Column(name="maker_id")
+	private int makerId;
 	
 	public Game() {
 		super();
 	}
 	
-	public Game(int id, String name, String category, String maker, String system) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.category = category;
-		this.maker = maker;
-		this.system = system;
-	}
-	
-	public Game(int id, String name, String category, String description, String picture, String maker,
-			String system) {
+	public Game(int id, String name, String category, String description, int releaseYear, String picture, String video,
+			int makerId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.category = category;
 		this.description = description;
+		this.releaseYear = releaseYear;
 		this.picture = picture;
-		this.maker = maker;
-		this.system = system;
+		this.video = video;
+		this.makerId = makerId;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Game [id=" + id + ", name=" + name + ", category=" + category + ", description=" + description
-				+ ", picture=" + picture + ", video=" + video + ", maker=" + maker + ", system=" + system + "]";
+				+ ", releaseYear=" + releaseYear + ", picture=" + picture + ", video=" + video + ", maker=" + makerId
+				+ ", system=" + "]";
+	}
+
+	public int getReleaseYear() {
+		return releaseYear;
+	}
+
+	public void setReleaseYear(int releaseYear) {
+		this.releaseYear = releaseYear;
 	}
 
 	public String getName() {
@@ -103,20 +106,12 @@ public class Game {
 		this.video = video;
 	}
 
-	public String getMaker() {
-		return maker;
+	public int getMaker() {
+		return makerId;
 	}
 
-	public void setMaker(String maker) {
-		this.maker = maker;
-	}
-
-	public String getSystem() {
-		return system;
-	}
-
-	public void setSystem(String system) {
-		this.system = system;
+	public void setMaker(int makerId) {
+		this.makerId = makerId;
 	}
 
 	public int getId() {

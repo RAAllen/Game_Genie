@@ -14,17 +14,17 @@
 
 	<mvc:annotation-driven />
 
-	<bean id="entityManagerFactory"
+	<bean id="myEntityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="CrudApp"></property>
+		<property name="persistenceUnitName" value="CrudApp" />
 	</bean>
 
-	<bean id="transactionManager"
+	<bean id="myTransactionManager"
 		class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory"
-			ref="entityManagerFactory"></property>
+			ref="myEntityManagerFactory" />
 	</bean>
 
-	<tx:annotation-driven transaction-manager="transactionManager"/>
+	<tx:annotation-driven transaction-manager="myTransactionManager"/>
 	
 </beans>

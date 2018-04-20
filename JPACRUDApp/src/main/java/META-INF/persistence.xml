@@ -8,9 +8,11 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
 
-<!-- 	this is where you insert all the entities
-		<class>com.skilldistillery.jpacrud.entities.INSERT_CLASS_NAME_HERE</class>
- -->
+<!-- 	this is where you insert all the entities -->
+		<class>com.skilldistillery.jpacrud.entities.Game</class>
+		<class>com.skilldistillery.jpacrud.entities.System</class>
+		<class>com.skilldistillery.jpacrud.entities.Maker</class>
+
 
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/games" />
