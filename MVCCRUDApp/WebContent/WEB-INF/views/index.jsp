@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>INSERT WEB NAME HERE</h1>
+<h1>INSERT WEB NAME HERE 😅</h1>
+<h2>${message}</h2>
 </body>
 </html>

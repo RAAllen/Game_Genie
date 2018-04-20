@@ -13,21 +13,16 @@
  -->
 
 		<properties>
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/INSERT_DATABASE_NAME_HERE" />
-			<property name="javax.persistence.jdbc.user" value="INSERT_USER_NAME_HERE" />
-			<property name="javax.persistence.jdbc.password"
-				value="INSERT_PASSWORD_HERE" />
-			<property name="javax.persistence.jdbc.driver"
-				value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/games" />
+			<property name="javax.persistence.jdbc.user" value="gamesuser" />
+			<property name="javax.persistence.jdbc.password" value="gamesuser" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="false" />
 
-			<property name="hibernate.dialect"
-				value="org.hibernate.dialect.MySQLDialect" />
-			<property name="hibernate.connection.provider_class"
-				value="org.hibernate.connection.C3P0ConnectionProvider" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider" />
 
 			<property name="hibernate.c3p0.max_size" value="5" />
 			<property name="hibernate.c3p0.min_size" value="0" />
