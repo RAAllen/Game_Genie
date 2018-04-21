@@ -22,18 +22,34 @@ public class MVCController {
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
 		List<Game> games = dao.getAll();
-		mv.addObject("games", games);
+		mv.addObject("allGames", games);
 		mv.setViewName("WEB-INF/views/index.jsp");
 		return mv;
 	}
 	
-	@RequestMapping(path="getGame.do", method=RequestMethod.GET)
-	public ModelAndView getGame(@RequestParam("gameId") int id) {
+	@RequestMapping(path="getGameById.do", method=RequestMethod.GET)
+	public ModelAndView getGameById(@RequestParam("gameId") int id) {
 		ModelAndView mv = new ModelAndView();
 		Game game = dao.getById(id);
 		mv.addObject("game", game);
-		mv.setViewName("WEB-INF/views/index.jsp");
+		mv.setViewName("WEB-INF/views/viewGame.jsp");
 		return mv;
 	}
+	
+	@RequestMapping(path="getGameByKeyword.do", method=RequestMethod.GET)
+	public ModelAndView getGameByKeyword(@RequestParam("keyword") String string) {
+		ModelAndView mv = new ModelAndView();
+		List<Game> games = dao.getByKeyword(string);
+		mv.addObject("keywordGames", games);
+		mv.setViewName("WEB-INF/views/viewGames.jsp");
+		return mv;
+	}
+	
+//	@RequestMapping(path="getGameByKeyword.do", method=RequestMethod.POST)
+//	public ModelAndView addAGame(@RequestParam("gameToAdd") Game game) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("WEB-INF/views/viewGames.jsp");
+//		return mv;
+//	}
 
 }

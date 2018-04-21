@@ -24,7 +24,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 		<div class="row">
 			<ul>
-				<c:forEach items="${allGames}" var="game">
+				<c:forEach items="${keywordGames}" var="game">
 					<div class="col-sm-4"></div>
 					<li><a href="getGameById.do?gameId=${game.id}">${game.name}</a></li>
 					<li><a href="getGameById.do?gameId=${game.id}"><img
