@@ -31,15 +31,15 @@ public class Game {
 	@Column(name="video")
 	private String video;
 	
-	@Column(name="maker_id")
-	private int makerId;
+	@Column(name="maker")
+	private String maker;
 	
 	public Game() {
 		super();
 	}
 	
 	public Game(int id, String name, String category, String description, int releaseYear, String picture, String video,
-			int makerId) {
+			String maker) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -48,13 +48,13 @@ public class Game {
 		this.releaseYear = releaseYear;
 		this.picture = picture;
 		this.video = video;
-		this.makerId = makerId;
+		this.maker = maker;
 	}
 
 	@Override
 	public String toString() {
 		return "Game [id=" + id + ", name=" + name + ", category=" + category + ", description=" + description
-				+ ", releaseYear=" + releaseYear + ", picture=" + picture + ", video=" + video + ", maker=" + makerId
+				+ ", releaseYear=" + releaseYear + ", picture=" + picture + ", video=" + video + ", maker=" + maker
 				+ ", system=" + "]";
 	}
 
@@ -106,12 +106,12 @@ public class Game {
 		this.video = video;
 	}
 
-	public int getMaker() {
-		return makerId;
+	public String getMaker() {
+		return maker;
 	}
 
-	public void setMaker(int makerId) {
-		this.makerId = makerId;
+	public void setMaker(String maker) {
+		this.maker = maker;
 	}
 
 	public int getId() {

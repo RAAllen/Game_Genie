@@ -21,18 +21,19 @@
 		<jsp:include page="header.jsp"></jsp:include>
 
 		<div class="row">
-			<h5>${game.name}</h5>
 			<ul>
-				<li>${game.releaseYear}</li>
-				<li>${game.category}</li>
+				<li><h4>${game.name}</h4></li>
+				<li>Made in ${game.releaseYear} by ${game.maker}</li>
 				<li>${game.description}</li>
-				<li>${game.picture}</li>
-				<li>${game.video}</li>
+				<li><img src="${game.picture}"/></li>
+				<li><a href="${game.video}" target="_blank">Watch it being played</a></li>
 			</ul>
 		</div>
 		<div class="row">
-			<label for="delete">Delete the Game</label>
+			<label for="delete">Delete the Game: </label>
 			<input class="btn btn-warning" type="submit" value="delete">
+			<label for="update">Update the Game: </label>
+			<input class="btn btn-warning" type="submit" value="update">
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

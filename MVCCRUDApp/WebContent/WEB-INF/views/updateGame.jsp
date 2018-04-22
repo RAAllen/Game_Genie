@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -19,10 +19,31 @@
 <title>Game Genie</title>
 </head>
 <body>
-<div class="containter-fluid">
-<jsp:include page="header.jsp"></jsp:include>
+	<div class="container">
+		<jsp:include page="header.jsp"></jsp:include>
 
-</div>
+		<div class="row">
+			<div class="col">
+				<ul>
+					<li><h4>${game.name}</h4></li>
+					<li>Made in ${game.releaseYear} by ${game.maker}</li>
+					<li>${game.description}</li>
+					<li><img src="${game.picture}" /></li>
+					<li><a href="${game.video}" target="_blank">Watch it being
+							played</a></li>
+					<li><label for="delete">Delete the Game instead: </label> <input
+						class="btn btn-warning" type="submit" value="delete"></li>
+				</ul>
+			</div>
+			<div class="col">
+			<form>
+			
+			</form>
+				<label for="update">Update the Game: </label> <input
+					class="btn btn-warning" type="submit" value="update">
+			</div>
+		</div>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
