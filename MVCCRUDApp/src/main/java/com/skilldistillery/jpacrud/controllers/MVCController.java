@@ -36,8 +36,8 @@ public class MVCController {
 		return mv;
 	}
 	
-	@RequestMapping(path="getGameByKeyword.do", method=RequestMethod.GET)
-	public ModelAndView getGameByKeyword(@RequestParam("keyword") String string) {
+	@RequestMapping(path="getGamesByKeyword.do", method=RequestMethod.GET)
+	public ModelAndView getGamesByKeyword(@RequestParam("keyword") String string) {
 		ModelAndView mv = new ModelAndView();
 		List<Game> games = dao.getByKeyword(string);
 		mv.addObject("keywordGames", games);
@@ -45,11 +45,18 @@ public class MVCController {
 		return mv;
 	}
 	
-//	@RequestMapping(path="getGameByKeyword.do", method=RequestMethod.POST)
-//	public ModelAndView addAGame(@RequestParam("gameToAdd") Game game) {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("WEB-INF/views/viewGames.jsp");
-//		return mv;
-//	}
+	@RequestMapping(path="addGame.do", method=RequestMethod.POST)
+	public ModelAndView addAGame(@RequestParam("gameToAdd") Game game) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/addGame.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path="deleteGame.do", method=RequestMethod.POST)
+	public ModelAndView deleteAGame(@RequestParam("gameToDelete") Game game) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/addGame.jsp");
+		return mv;
+	}
 
 }

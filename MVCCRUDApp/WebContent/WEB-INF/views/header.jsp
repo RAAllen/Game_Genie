@@ -8,18 +8,18 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-6">
-			<form>
-				<label for="searchById">Search for a game by it's ID: </label> <input
-					type="text" name="searchById" />
-				<button class="btn btn-warning" type="submit" value="searchById">Search</button>
+			<form action="getGameById.do">
+				<label for="gameId">Search for a game by it's ID: </label> <input
+					type="text" name="gameId" />
+				<button class="btn btn-warning" type="submit" value="gameId">Search</button>
 			</form>
 		</div>
 		<div class="col-sm-6">
-			<form>
-				<label for="searchByKeyword">Search for a game by it's
-					keyword: </label> <input type="text" name="searchByKeyword" />
+			<form action="getGamesByKeyword.do">
+				<label for="keyword">Search for a game by it's
+					keyword: </label> <input type="text" name="keyword" />
 				<button class="btn btn-warning" type="submit"
-					value="searchByKeyword">Search</button>
+					value="keyword">Search</button>
 			</form>
 		</div>
 	</div>

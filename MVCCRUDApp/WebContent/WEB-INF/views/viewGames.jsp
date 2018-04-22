@@ -23,7 +23,7 @@
 	<div class="container">
 		<jsp:include page="header.jsp"></jsp:include>
 		<c:set var="count" value="0" scope="page" />
-		<c:forEach items="${allGames}" var="game">
+		<c:forEach items="${keywordGames}" var="game">
 			<c:if test="${count % 3 == 0}">
 				<div class="row">
 					<div class="col-sm-4">

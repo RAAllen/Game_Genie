@@ -21,28 +21,12 @@
 <body>
 	<div class="container">
 		<jsp:include page="header.jsp"></jsp:include>
-
-		<div class="row">
-			<div class="col">
-				<ul>
-					<li><h4>${game.name}</h4></li>
-					<li>Made in ${game.releaseYear} by ${game.maker}</li>
-					<li>${game.description}</li>
-					<li><img src="${game.picture}" /></li>
-					<li><a href="${game.video}" target="_blank">Watch it being
-							played</a></li>
-					<li><label for="delete">Delete the Game instead: </label> <input
-						class="btn btn-warning" type="submit" value="delete"></li>
-				</ul>
-			</div>
-			<div class="col">
-			<form>
-			
-			</form>
-				<label for="update">Update the Game: </label> <input
-					class="btn btn-warning" type="submit" value="update">
-			</div>
-		</div>
+		<form action="updateGame.do">
+		
+		</form>
+		<label for="update">Update the Game: </label> <input
+			class="btn btn-warning" type="submit" value="update">
+	</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
