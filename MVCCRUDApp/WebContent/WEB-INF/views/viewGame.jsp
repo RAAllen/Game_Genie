@@ -17,20 +17,23 @@
 <title>Game Genie</title>
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+	<div class="container">
+		<jsp:include page="header.jsp"></jsp:include>
 
-	<div class="row">
-		<h5>${game.name}</h5>
-		<ul>
-			<li>${game.releaseYear}</li>
-			<li>${game.category}</li>
-			<li>${game.description}</li>
-			<li>${game.picture}</li>
-			<li>${game.video}</li>
-		</ul>
-	</div>
-	<div class="row">
-		<input class="btn btn-warning" type="submit" value="searchByKeyword">Delete the Game</button>
+		<div class="row">
+			<h5>${game.name}</h5>
+			<ul>
+				<li>${game.releaseYear}</li>
+				<li>${game.category}</li>
+				<li>${game.description}</li>
+				<li>${game.picture}</li>
+				<li>${game.video}</li>
+			</ul>
+		</div>
+		<div class="row">
+			<label for="delete">Delete the Game</label>
+			<input class="btn btn-warning" type="submit" value="delete">
+		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
