@@ -38,6 +38,18 @@ public class Game {
 		super();
 	}
 	
+	public Game(String name, String category, String description, int releaseYear, String picture, String video,
+			String maker) {
+		super();
+		this.name = name;
+		this.category = category;
+		this.description = description;
+		this.releaseYear = releaseYear;
+		this.picture = picture;
+		this.video = video;
+		this.maker = maker;
+	}
+	
 	public Game(int id, String name, String category, String description, int releaseYear, String picture, String video,
 			String maker) {
 		super();

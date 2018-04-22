@@ -5,7 +5,12 @@
 <body>
 	<div class="container">
 		<jsp:include page="partials/header.jsp"></jsp:include>
-
+		<c:if test="${deleted} == true">
+			<h4>The game has been deleted! 😵</h4>
+		</c:if>
+		<c:if test="${deleted} == false">
+			<h4>The delete has failed.....🤔</h4>
+		</c:if>
 	</div>
 	<jsp:include page="partials/foot.jsp"></jsp:include>
 </body>

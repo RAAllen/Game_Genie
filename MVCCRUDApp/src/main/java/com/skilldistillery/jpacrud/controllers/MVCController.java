@@ -56,8 +56,8 @@ public class MVCController {
 	@RequestMapping(path="deleteGame.do", method=RequestMethod.POST)
 	public ModelAndView deleteAGame(RedirectAttributes redir, @RequestParam("gameToDelete") int id) {
 		ModelAndView mv = new ModelAndView();
-		Game game = dao.getById(id);
-		mv.addObject("game", game);
+		Boolean deleted = dao.delete(id);
+		mv.addObject("deleted", deleted);
 		mv.setViewName("WEB-INF/views/deleteGame.jsp");
 		return mv;
 	}
@@ -68,6 +68,16 @@ public class MVCController {
 		Game game = dao.getById(id);
 		mv.addObject("game", game);
 		mv.setViewName("WEB-INF/views/updateGame.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path="completeUpdateGame.do", method=RequestMethod.POST)
+	public ModelAndView completeUpdateGame(RedirectAttributes redir, @RequestParam("id") int id, @RequestParam("name") String name, @RequestParam("releaseYear") int releaseYear, @RequestParam("category") String category, @RequestParam("description") String description, @RequestParam("picture") String picture, @RequestParam("video") String video, @RequestParam("maker") String maker) {
+		ModelAndView mv = new ModelAndView();
+		Game gameToUpdate = new Game(name, category, description, releaseYear, picture, video, maker);
+		Game game = dao.update(id, gameToUpdate);
+		mv.addObject(game);
+		mv.setViewName("WEB-INF/views/viewGame.jsp");
 		return mv;
 	}
 

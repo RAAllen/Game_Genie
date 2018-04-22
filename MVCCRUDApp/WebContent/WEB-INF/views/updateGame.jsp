@@ -6,11 +6,13 @@
 <body>
 	<div class="container">
 		<jsp:include page="partials/header.jsp"></jsp:include>
-		<form action="updateGame.do">
+		<form action="completeUpdateGame.do" method="POST">
 			<label for="name">Enter a new name for the game: </label> 
 			<input type="text" name="name" placeholder="${game.name}"/>
 			<label for="releaseYear">Enter a new release year for the game: </label> 
 			<input type="text" name="releaseYear" placeholder="${game.releaseYear}"/>
+			<label for="maker">Enter a new maker for the game: </label> 
+			<input type="text" name="maker" placeholder="${game.maker}"/>
 			<label for="category">Enter a new category for the game: </label> 
 			<input type="text" name="category" placeholder="${game.category}"/>
 			<label for="description">Enter a new description for the game: </label> 
