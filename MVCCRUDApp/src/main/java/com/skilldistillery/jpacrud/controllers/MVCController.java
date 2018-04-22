@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.jpacrud.data.GameDAO;
 import com.skilldistillery.jpacrud.entities.Game;
@@ -53,9 +54,20 @@ public class MVCController {
 	}
 	
 	@RequestMapping(path="deleteGame.do", method=RequestMethod.POST)
-	public ModelAndView deleteAGame(@RequestParam("gameToDelete") Game game) {
+	public ModelAndView deleteAGame(RedirectAttributes redir, @RequestParam("gameToDelete") int id) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WEB-INF/views/addGame.jsp");
+		Game game = dao.getById(id);
+		mv.addObject("game", game);
+		mv.setViewName("WEB-INF/views/deleteGame.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path="updateGame.do", method=RequestMethod.POST)
+	public ModelAndView updateAGame(@RequestParam("gameToUpdate") int id) {
+		ModelAndView mv = new ModelAndView();
+		Game game = dao.getById(id);
+		mv.addObject("game", game);
+		mv.setViewName("WEB-INF/views/updateGame.jsp");
 		return mv;
 	}
 

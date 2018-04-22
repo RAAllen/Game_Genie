@@ -7,9 +7,18 @@
 	<div class="container">
 		<jsp:include page="header.jsp"></jsp:include>
 		<form action="updateGame.do">
-			<label for="name">Enter a new name for the game: </label> <input
-				type="text" name="name" placeholder="${game.name}" />
-
+			<label for="name">Enter a new name for the game: </label> 
+			<input type="text" name="name" placeholder="${game.name}"/>
+			<label for="releaseYear">Enter a new release year for the game: </label> 
+			<input type="text" name="releaseYear" placeholder="${game.releaseYear}"/>
+			<label for="category">Enter a new category for the game: </label> 
+			<input type="text" name="category" placeholder="${game.category}"/>
+			<label for="description">Enter a new description for the game: </label> 
+			<input type="text" name="description" placeholder="${game.description}"/>
+			<label for="picture">Enter a new url link to a picture for the game: </label> 
+			<input type="text" name="picture" placeholder="${game.picture}"/>
+			<label for="video">Enter a new url link to a video for the game: </label> 
+			<input type="text" name="video" placeholder="${game.video}"/>
 		</form>
 		<label for="update">Update the Game: </label> <input
 			class="btn btn-warning" type="submit" value="update">
