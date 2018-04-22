@@ -35,7 +35,7 @@ You will then be prompted to enter a password in the terminal, type `gamesuser`.
 
 * The user will be able to search for a game by its id and be sent to a new jsp view displaying all the information about that game.
 
-* The user will be able to search for the game by a keyword and be sent to a new jsp displaying all the games that match the keyword.
+* The user will be able to search for the game by a keyword and be sent to a new jsp view displaying all the games that match the keyword.
 
 * The user will be able to edit a games data values and have those changes be reflect in the database.
 
