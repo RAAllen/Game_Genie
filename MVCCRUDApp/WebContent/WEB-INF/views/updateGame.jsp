@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="partials/head.jsp"></jsp:include>
 
@@ -7,6 +6,7 @@
 	<div class="container">
 		<jsp:include page="partials/header.jsp"></jsp:include>
 		<form action="completeUpdateGame.do" method="POST">
+			<input type="hidden" name="gameToUpdate" value="${game.id}"> 
 			<label for="name">Enter a new name for the game: </label> 
 			<input type="text" name="name" placeholder="${game.name}"/>
 			<label for="releaseYear">Enter a new release year for the game: </label> 
@@ -21,9 +21,8 @@
 			<input type="text" name="picture" placeholder="${game.picture}"/>
 			<label for="video">Enter a new url link to a video for the game: </label> 
 			<input type="text" name="video" placeholder="${game.video}"/>
+		<label for="update">Update the Game: </label> <input class="btn btn-warning" type="submit" value="update">
 		</form>
-		<label for="update">Update the Game: </label> <input
-			class="btn btn-warning" type="submit" value="update">
 	</div>
 	<jsp:include page="partials/foot.jsp"></jsp:include>
 </body>

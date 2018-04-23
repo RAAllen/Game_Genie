@@ -19,6 +19,7 @@ public class MVCController {
 	@Autowired
 	private GameDAO dao;
 	
+	// get index with all games
 	@RequestMapping(path="index.do", method=RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
@@ -28,6 +29,7 @@ public class MVCController {
 		return mv;
 	}
 	
+	// get a single game by id
 	@RequestMapping(path="getGameById.do", method=RequestMethod.GET)
 	public ModelAndView getGameById(@RequestParam("gameId") int id) {
 		ModelAndView mv = new ModelAndView();
@@ -37,6 +39,7 @@ public class MVCController {
 		return mv;
 	}
 	
+	// get a list of games matching a keyword
 	@RequestMapping(path="getGamesByKeyword.do", method=RequestMethod.GET)
 	public ModelAndView getGamesByKeyword(@RequestParam("keyword") String string) {
 		ModelAndView mv = new ModelAndView();
@@ -46,13 +49,34 @@ public class MVCController {
 		return mv;
 	}
 	
-	@RequestMapping(path="addGame.do", method=RequestMethod.POST)
-	public ModelAndView addAGame(@RequestParam("gameToAdd") Game game) {
+	// go to the page with a form to add a game
+	@RequestMapping(path="addGame.do", method=RequestMethod.GET)
+	public ModelAndView addAGame() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WEB-INF/views/addGame.jsp");
 		return mv;
 	}
 	
+	// actually create a game and add it to the database
+	@RequestMapping(path="addGameToDB.do", method=RequestMethod.POST)
+	public ModelAndView addAGameToDB(RedirectAttributes redir, Game game) {
+		ModelAndView mv = new ModelAndView();
+		Game gameToAdd = dao.create(game);
+		mv.addObject(gameToAdd);
+		mv.setViewName("WEB-INF/views/viewGame.jsp");
+		return mv;
+	}
+	
+	// not working
+	@RequestMapping(path="getResult.do", method=RequestMethod.GET)
+	public ModelAndView getAddedGameResult(@RequestParam("game") Game game) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("game", game);
+		mv.setViewName("WEB-INF/views/result.jsp");
+		return mv;
+	}
+	
+	// delete a game from the database
 	@RequestMapping(path="deleteGame.do", method=RequestMethod.POST)
 	public ModelAndView deleteAGame(RedirectAttributes redir, @RequestParam("gameToDelete") int id) {
 		ModelAndView mv = new ModelAndView();
@@ -62,8 +86,9 @@ public class MVCController {
 		return mv;
 	}
 	
-	@RequestMapping(path="updateGame.do", method=RequestMethod.POST)
-	public ModelAndView updateAGame(@RequestParam("gameToUpdate") int id) {
+	// go to the form to update a game
+	@RequestMapping(path="updateGame.do", method=RequestMethod.GET)
+	public ModelAndView updateAGame(@RequestParam("gameToUpdate") Integer  id) {
 		ModelAndView mv = new ModelAndView();
 		Game game = dao.getById(id);
 		mv.addObject("game", game);
@@ -71,12 +96,12 @@ public class MVCController {
 		return mv;
 	}
 	
+	// actually update the game in the database
 	@RequestMapping(path="completeUpdateGame.do", method=RequestMethod.POST)
-	public ModelAndView completeUpdateGame(RedirectAttributes redir, @RequestParam("id") int id, @RequestParam("name") String name, @RequestParam("releaseYear") int releaseYear, @RequestParam("category") String category, @RequestParam("description") String description, @RequestParam("picture") String picture, @RequestParam("video") String video, @RequestParam("maker") String maker) {
+	public ModelAndView completeUpdateGame(RedirectAttributes redir, @RequestParam("gameToUpdate") Integer id, Game game) {
 		ModelAndView mv = new ModelAndView();
-		Game gameToUpdate = new Game(name, category, description, releaseYear, picture, video, maker);
-		Game game = dao.update(id, gameToUpdate);
-		mv.addObject(game);
+		Game updatedGame = dao.update(id, game);
+		mv.addObject(updatedGame);
 		mv.setViewName("WEB-INF/views/viewGame.jsp");
 		return mv;
 	}

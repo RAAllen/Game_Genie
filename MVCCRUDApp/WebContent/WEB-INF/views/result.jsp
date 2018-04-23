@@ -6,8 +6,9 @@
 <body>
 	<div class="container">
 		<jsp:include page="partials/header.jsp"></jsp:include>
-		<c:if test="${game != null}">
+		
 		<div class="row">
+			<h3>The Game you added: </h3>
 			<ul>
 				<li><h4>${game.name}</h4></li>
 				<li>Made in ${game.releaseYear} by ${game.maker}</li>
@@ -25,17 +26,13 @@
 				</form>
 			</div>
 			<div class="col">
-				<form action="updateGame.do" method="GET">
+				<form action="updateGame.do" method="POST">
 					<label for="update">Update the Game:</label> 
 					<input type="hidden" name="gameToUpdate" value="${game.id}"> 
 					<input class="btn btn-warning" type="submit" value="update">
 				</form>
 			</div>
 		</div>
-		</c:if>
-		<c:if test="${game == null}">
-		<h4>The game was not found.....🤔</h4>
-		</c:if>
 	</div>
 	<jsp:include page="partials/foot.jsp"></jsp:include>
 </body>
