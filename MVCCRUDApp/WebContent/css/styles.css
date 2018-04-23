@@ -1,0 +1,14 @@
+ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+li {
+  list-style: none;
+  list-style-type: none;
+}
+
+ul, menu, dir {
+  list-style: none;
+  list-style-type: none;
+}

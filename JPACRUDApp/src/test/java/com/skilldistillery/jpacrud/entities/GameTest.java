@@ -1,6 +1,6 @@
 package com.skilldistillery.jpacrud.entities;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -34,7 +34,13 @@ class GameTest {
 	@Test
 	@DisplayName("Test Game entity mappings")
 	void test_game_entity_mappings() {
-
+		assertEquals("Little Red Riding Hood", game.getName());
+		assertEquals("Futurehouse", game.getMaker());
+		assertEquals("Learning", game.getCategory());
+		assertEquals("An interactive learning game that tells the story of little red riding hood and the big bad wolf.", game.getDescription());
+		assertEquals(1983, game.getReleaseYear());
+		assertEquals("https://www.youtube.com/watch?v=VmJcVW5_Rq0", game.getVideo());
+		assertEquals("http://www.atarimania.com/8bit/screens/bedtime_stories_little_red_riding_hood.gif", game.getPicture());
 	}
 
 }
