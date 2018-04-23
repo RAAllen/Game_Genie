@@ -34,7 +34,7 @@ public class GameDAOImpl implements GameDAO {
 	public List<Game> getByKeyword(String string) {
 		List<Game> games = new ArrayList<>();
 		String jpql = "SELECT g FROM Game g WHERE g.name LIKE :keyword OR g.description LIKE :keyword";
-		games = em.createQuery(jpql, Game.class).setParameter("keyword", string).getResultList();
+		games = em.createQuery(jpql, Game.class).setParameter("keyword", "%" + string + "%").getResultList();
 		return games;
 	}
 
