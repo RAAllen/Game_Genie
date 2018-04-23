@@ -3,8 +3,8 @@
 <jsp:include page="partials/head.jsp"></jsp:include>
 
 <body>
+	<jsp:include page="partials/header.jsp"></jsp:include>
 	<div class="container">
-		<jsp:include page="partials/header.jsp"></jsp:include>
 		<form action="addGameToDB.do" method="POST">
 			<label for="name">Enter a name for the game: </label> 
 			<input type="text" name="name" placeholder="Super Mario Bros. 3"/>
@@ -20,7 +20,8 @@
 			<input type="text" name="picture" placeholder="https://ih1.redbubble.net/image.245132386.1935/flat,1000x1000,075,f.u1.jpg"/>
 			<label for="video">Enter a url link to a video for the game: </label> 
 			<input type="text" name="video" placeholder="https://www.youtube.com/watch?v=tmnMq2Hw72w"/>
-			<label for="add">Add the Game: </label> <input class="btn btn-warning" type="submit" value="add">
+			<label for="add">Add the Game: </label> 
+			<input class="btn btn-warning" type="submit" value="add">
 		</form>
 	</div>
 	<jsp:include page="partials/foot.jsp"></jsp:include>

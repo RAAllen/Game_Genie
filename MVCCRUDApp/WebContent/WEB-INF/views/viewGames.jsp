@@ -3,8 +3,8 @@
 <jsp:include page="partials/head.jsp"></jsp:include>
 
 <body>
+	<jsp:include page="partials/header.jsp"></jsp:include>
 	<div class="container">
-		<jsp:include page="partials/header.jsp"></jsp:include>
 		<c:set var="count" value="0" scope="page" />
 		<c:forEach items="${keywordGames}" var="game">
 			<c:if test="${count % 3 == 0}">

@@ -4,8 +4,8 @@
 <jsp:include page="partials/head.jsp"></jsp:include>
 
 <body>
+	<jsp:include page="partials/header.jsp"></jsp:include>
 	<div class="container">
-		<jsp:include page="partials/header.jsp"></jsp:include>
 		<c:if test="${deleted == true}">
 			<h4>The game has been deleted! 😵</h4>
 		</c:if>

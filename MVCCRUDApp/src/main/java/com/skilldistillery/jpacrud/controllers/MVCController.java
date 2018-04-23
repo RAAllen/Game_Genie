@@ -57,12 +57,15 @@ public class MVCController {
 		return mv;
 	}
 	
-	// actually create a game and add it to the database
+	// actually create a game and add it to the database - the commented out lines are related to attempting to get the redirect actually working
 	@RequestMapping(path="addGameToDB.do", method=RequestMethod.POST)
 	public ModelAndView addAGameToDB(RedirectAttributes redir, Game game) {
 		ModelAndView mv = new ModelAndView();
 		Game gameToAdd = dao.create(game);
+//		dao.create(game);
+//		redir.addFlashAttribute("game", game);
 		mv.addObject(gameToAdd);
+//		mv.setViewName("redirect:getResult.do");
 		mv.setViewName("WEB-INF/views/viewGame.jsp");
 		return mv;
 	}
@@ -71,7 +74,6 @@ public class MVCController {
 	@RequestMapping(path="getResult.do", method=RequestMethod.GET)
 	public ModelAndView getAddedGameResult(@RequestParam("game") Game game) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("game", game);
 		mv.setViewName("WEB-INF/views/result.jsp");
 		return mv;
 	}
