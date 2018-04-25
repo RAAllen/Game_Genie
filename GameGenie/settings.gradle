@@ -15,6 +15,6 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'MVCCRUDApp'
+rootProject.name = 'GameGenie'
 
 includeFlat "JPACRUDApp"

@@ -23,9 +23,7 @@
 					<div class="col-sm-4">
 						<ul>
 							<li><a href="getGameById.do?gameId=${game.id}">${game.name}</a></li>
-							<li><a href="getGameById.do?gameId=${game.id}"><img
-									src="${game.picture}" alt="An image of ${game.name}"
-									height="150" width="150" /></a></li>
+							<li><a href="getGameById.do?gameId=${game.id}"><img src="${game.picture}" alt="An image of ${game.name}" height="150" width="150" /></a></li>
 						</ul>
 					</div>
 				</c:if>
