@@ -1,4 +1,4 @@
-# JPACRUDProject
+# Game Genie
 
 ## A web application with a video game database.
 
