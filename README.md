@@ -6,7 +6,7 @@
 
 ## Setup/Installation requirements
 
-* If you want to interact with the finished program, please visit: http://18.220.178.242:8080/GameGenie/.
+* If you want to interact with the finished program, please visit: [http://18.220.178.242:8080/GameGenie/](Game Genie).
 * In order to edit this project and work with it on your own machine you will need a terminal application such as Terminal or Bash. Since this project has a Gradle nature, you will need to have the Spring Tool Suite installed. You will also need a database server program such as MAMP or LAMP.
 * Start by opening the terminal application and typing the command
 ```
