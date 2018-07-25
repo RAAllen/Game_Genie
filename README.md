@@ -6,11 +6,11 @@
 
 ## Setup/Installation requirements
 
-* If you want to interact with the finished program, please visit: INSERT_URL_HERE_WHEN_UPLOADED.
+* If you want to interact with the finished program, please visit: http://18.220.178.242:8080/GameGenie/.
 * In order to edit this project and work with it on your own machine you will need a terminal application such as Terminal or Bash. Since this project has a Gradle nature, you will need to have the Spring Tool Suite installed. You will also need a database server program such as MAMP or LAMP.
 * Start by opening the terminal application and typing the command
 ```
-git clone https://github.com/RAAllen/JPACRUDProject.git
+git clone https://github.com/RAAllen/Game_Genie.git
 ```
 after navigating with the `cd` command to the location you would like the project to be cloned into.
 * Use the terminal application to navigate to the project directory you just cloned down off of GitHub using the "cd" command.
